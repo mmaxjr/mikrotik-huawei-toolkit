@@ -1,0 +1,11 @@
+[Unit]
+Description=mkhw-toolkit - backup + auditoria de dispositivos MikroTik/Huawei
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+# Ajuste o caminho e o usuário conforme seu ambiente
+WorkingDirectory=/opt/mikrotik-huawei-toolkit
+User=mkhw
+ExecStart=/opt/mikrotik-huawei-toolkit/.venv/bin/python main.py run-all

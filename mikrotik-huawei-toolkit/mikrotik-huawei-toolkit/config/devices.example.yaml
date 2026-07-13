@@ -1,0 +1,31 @@
+# Copie este arquivo para devices.yaml e preencha com os dados reais.
+# devices.yaml NUNCA deve ser commitado (já está no .gitignore).
+
+devices:
+  - name: core-mikrotik-01
+    vendor: mikrotik          # mikrotik | huawei
+    host: 10.0.0.1
+    port: 22
+    username: admin
+    # Prefira variáveis de ambiente para senha, ex: MKHW_PASS_CORE_MIKROTIK_01
+    password: "${MKHW_PASS_CORE_MIKROTIK_01}"
+
+  - name: edge-huawei-01
+    vendor: huawei
+    host: 10.0.0.2
+    port: 22
+    username: netadmin
+    password: "${MKHW_PASS_EDGE_HUAWEI_01}"
+
+# Configurações gerais
+settings:
+  backup_dir: backups
+  reports_dir: reports
+  keep_last_n_backups: 30      # quantos backups manter por device antes de rotacionar
+  timeout: 20                  # segundos
+
+# Notificação via Telegram (opcional)
+telegram:
+  enabled: false
+  bot_token: "${MKHW_TELEGRAM_BOT_TOKEN}"
+  chat_id: "${MKHW_TELEGRAM_CHAT_ID}"

@@ -1,0 +1,9 @@
+[Unit]
+Description=Executa mkhw-toolkit (backup + diff + auditoria) diariamente às 02:00
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

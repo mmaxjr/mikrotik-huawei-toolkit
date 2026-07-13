@@ -1,0 +1,5 @@
+# Exemplo de agendamento via cron (alternativa ao systemd timer).
+# Instale com: crontab -e  (usuário que tem acesso ao venv e ao repo)
+#
+# Roda backup + diff + auditoria todos os dias às 02:00
+0 2 * * * cd /opt/mikrotik-huawei-toolkit && ./.venv/bin/python main.py run-all >> /var/log/mkhw-toolkit.log 2>&1

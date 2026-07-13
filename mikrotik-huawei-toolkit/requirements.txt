@@ -1,0 +1,5 @@
+netmiko>=4.3.0
+librouteros>=3.4.1
+PyYAML>=6.0
+requests>=2.31.0
+APScheduler>=3.10.4
